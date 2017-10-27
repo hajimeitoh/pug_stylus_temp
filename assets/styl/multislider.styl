@@ -1,0 +1,83 @@
+@import 'nib'
+/* -------------------------
+// スライダープラグイン用
+------------------------- */
+.multislider
+  position relative
+  overflow hidden
+  &-content
+    absolute top left
+    z-index 1
+    overflow hidden
+    margin 0
+    padding 0
+    &-item
+      display inline-block
+      float left
+      margin 0
+      padding 0
+  ^[0] &-controler
+    &-item
+      absolute top bottom
+      height auto
+      margin auto
+      z-index 2
+      width 33px
+      vertical-align middle
+      box-sizing border-box
+      &_prev
+        left 0
+        &.disabled
+          opacity: .5
+      &_next
+        right 0
+        &.disabled
+          opacity: .5
+      &-btn
+        absolute top bottom left right
+        border none
+        padding 0
+        margin auto
+        height 27px
+        width @height
+        background-color transparent
+        cursor pointer
+        &::-moz-focus-inner
+          border 0
+          padding 0
+    .disabled
+      &-btn
+        opacity .5
+  ^[0] &-indicator
+    absolute bottom left right
+    margin auto 0 0
+    height 14px
+    padding-bottom 4px
+    width 100%
+    text-align center
+    z-index 2
+    &-item
+      position relative
+      display inline-block
+      background-color #fff
+      height 10px
+      width @height
+      border-radius 5px
+      cursor pointer
+      overflow hidden
+      transition background-color 0s ease 0s
+      &.current
+        background-color #888
+        transition background-color .5s ease 0s
+      & + ^[0]-indicator-item
+        margin-left 4px
+  &-hoverReact
+    & ^[0]-controler > ^[0]-controler-item
+    & ^[0]-indicator > ^[0]-indicator-item
+      opacity 0
+      transition opacity .2s ease 0s
+    &:hover
+      & ^[0]-controler > ^[0]-controler-item
+      & ^[0]-indicator > ^[0]-indicator-item
+        opacity 1
+        transition opacity .2s ease 0s

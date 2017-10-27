@@ -1,0 +1,351 @@
+@import 'nib'
+
+/* index */
+.subtitle
+  display block
+  width 100%
+  padding 6px
+  background-color #555
+  margin 0 0 10px
+  color #aaa
+  font-size 1.5rem
+  box-sizing border-box
+
+.section
+  margin 10px
+  &-head
+    display block
+    color #333
+    background-color #999
+    font-size 1.2rem
+    margin-bottom 8px
+    font-weight bold
+    padding 3px
+.flex
+  width 100%
+  display flex
+  flex-direction row
+  flex-wrap wrap
+  justify-content stretch
+  align-items flex-start
+  padding 0 10px 10px
+  margin 0
+  box-sizing border-box
+  .section-head
+    flex-shrink 0
+    flex-grow 1
+    min-width 90%
+    margin 5px
+  .sample-wrap
+  .notice-wrap
+    padding 5px
+    .notice
+      background-color: #ccc;
+      border-radius 4px
+      padding 8px
+      font-size 0.8rem
+      line-height 1.3
+      p + p
+        padding-top 4px
+  .notice-wrap
+    flex-shrink 1
+    .notice-table
+      display block
+      width 100%
+      border-spacing 4px
+      border-radius 9px
+      border-collapse separate
+      background-color: #ccc;
+      font-size .8rem
+      max-width 700px
+      caption
+        padding 4px
+        font-weight bold
+        font-size 1rem
+      th, td
+        background-color #eee
+        color #333
+        border-radius 5px
+        padding 5px
+      td:first-child
+        font-weight 800
+  .code-wrap
+    display flex
+    flex-direction row
+    flex-wrap wrap
+    justify-content flex-start
+    align-items flex-start
+    max-width 100%
+    pre
+      display block
+      margin-left 0px
+      font-size 13px
+      line-height 1.42857143
+      color #333
+      word-break break-all
+      word-wrap break-word
+      line-height 1.2
+      padding 5px
+      font-family Menlo, Monaco, Consolas, "Courier New", monospace
+      max-width 100%
+      box-sizing border-box
+      code[data-head]
+        border 1px solid #ccc
+        border-radius 4px
+        overflow hidden
+        padding-top 1.5em
+        position relative
+        overflow-x auto
+        max-width 100%
+        word-wrap normal
+        white-space pre
+        box-sizing border-box
+        &::before
+          content attr(data-head)
+          padding 0 8px
+          line-height 1.3
+          margin-right auto
+          width auto
+          display block
+          position absolute
+          top 0
+          left 0
+          background-color rgb(204, 204, 204)
+          color #666
+          border-bottom-right-radius 4px
+
+
+.fa-stack .fa-inverse
+  color #fff
+
+
+
+/* -------------------------
+// 個別の設定
+------------------------- */
+
+.hide
+  display none !important
+
+/* スライド外コントローラー */
+.multicontroler_outside
+  font-size 0
+  vertical-align middle
+  .text
+    font-size 1rem
+    color #fff
+  .multislider-controler
+    display inline-block
+    vertical-align middle
+    &-item
+      display inline-block
+      vertical-align middle
+      &-btn
+        display inline-block
+        border none
+        padding 0
+        margin auto
+        height 27px
+        width @height
+        background-color transparent
+        cursor pointer
+  .multislider-indicator
+    display inline-block
+    vertical-align middle
+    &-item
+      margin-left 4px
+      display inline-block
+      vertical-align middle
+      background-color #99f
+      height 22px
+      width @height px
+      border-radius ( @height / 2 )px
+    .current
+      background-color #55f
+
+.slider_gap
+  overflow hidden
+  border-radius 10px
+  .multislider
+    margin 0 -5px
+  .multislider-content-item > a
+    display block
+    margin 0 5px
+    overflow hidden
+    border-radius 10px
+    img
+      display block
+  .multislider-controler
+    &-item_prev
+      margin-left 5px
+    &-item_next
+      margin-right 5px
+
+/* スライド内カセットがある場合 */
+.slider-multi
+  .multislider-content
+    .multislider-content-item
+      > ul
+        overflow hidden
+    .multislider-content-item-inner
+      float left
+
+/* スライド内コンテンツ */
+.slider_sample01
+  width 600px
+  overflow hidden
+  border-radius 12px
+  overflow hidden
+  .multislider
+    height 200px
+    margin 0 -5px
+    .slider-caption
+      display block
+      background-color: rgba( 0, 0, 0, .5 )
+      position absolute
+      bottom auto
+      top 15px
+      left 5px
+      right auto
+      width auto
+      padding 5px 15px 5px 35px
+      border-radius 0 12px 12px 0
+      font-size 16px
+      z-index 3
+      color #ffffff
+    .multislider-content
+      &-item
+        width @width
+        height @height
+        border-radius 12px
+        overflow hidden
+        margin 0 5px
+        a
+          display block
+          width @width
+          height @height
+          position relative
+          .foot
+            display block
+            position absolute
+            bottom 0
+            left 0
+            right 0
+            padding 20px
+            height auto
+            width auto
+            background-color rgba( 0, 0, 0, 0.5 )
+            color #fff
+            font-size 1.2rem
+            font-weight bold
+    .multislider-indicator
+      display block
+      background-color: rgba( 0, 0, 0, .5 )
+      bottom auto
+      top 15px
+      left auto
+      right 5px
+      width auto
+      padding 0 30px 0 0
+      text-align right
+      height auto
+      line-height 1
+      font-size 0
+      border-radius 12px 0 0 12px
+      &:after
+        content attr(data-num)
+        display inline-block
+        font-size 16px
+        color #ffffff
+        position absolute
+        top 0
+        bottom 0
+        right 5px
+        height 16px
+        margin auto
+      .multislider-indicator-item
+        line-height 1
+        font-size 0
+        margin 6px
+        width 12px
+        height 12px
+        border-radius 6px
+      .multislider-indicator-item + .multislider-indicator-item
+        margin-left 0
+#sliderSample01_slide01
+  background-image url(https://unsplash.it/600/200?image=1011)
+#sliderSample01_slide02
+  background-image url(https://unsplash.it/600/200?image=1012)
+#sliderSample01_slide03
+  background-image url(https://unsplash.it/600/200?image=1013)
+#sliderSample01_slide04
+  background-image url(https://unsplash.it/600/200?image=1014)
+
+.slider_sample02
+  background-color #666
+  .multislider-content
+    &-item
+      ul
+        width 572px
+        box-sizing border-box
+        padding 4px
+        overflow hidden
+        li
+          float left
+          box-sizing border-box
+          padding 4px
+          a
+            display block
+            background-color #fff
+            text-decoration none
+            color #555
+            img
+              display block
+            span
+              display table-cell
+              padding 0 4px
+              box-sizing border-box
+              height 24px
+              font-size 12px
+              vertical-align middle
+              font-weight bold
+  .multislider-controler
+    &-item
+      bottom 0 !important
+      &-btn
+        display table-cell
+        height 100%
+        width 33px
+        text-align center
+        vertical-align middle
+        background-color rgba( 80, 80, 80, .9 )
+        background-transparency( #515151, 0.9 )
+        color #ddd
+    .disabled
+        opacity 1
+        .multislider-controler-item-btn .fa
+          opacity 0
+  .multislider-indicator
+    padding-bottom 8px
+
+.sliderSyncFrom
+  .multislider-content-item-inner
+    position relative
+    img
+      display block
+      position relative
+      z-index 1
+    &.current::before
+      content ""
+      absolute left top
+      width 100%
+      height 100%
+      box-sizing border-box
+      border 3px solid #fff
+      z-index 2
+
+.slider_responsive
+  .multislider-content-item
+    & > img
+      width 100%
+      height auto
