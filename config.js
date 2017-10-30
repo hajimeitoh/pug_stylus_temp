@@ -44,7 +44,6 @@ module.exports = {
       style: {
         src: assets + 'styl/**/*.styl',
         watch: assets + 'styl/**/*.styl',
-        dist: dist + 'css/**/*.css',
         dest: dist + 'css'
       },
       copy: [

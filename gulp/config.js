@@ -4,7 +4,6 @@
  * 定数の設定も行う
  */
 
-var _ = require('lodash');
 var config = Object.create(require('../config'));
 // var TYPE = getType(process.argv);
 // var TYPE_REG = /%type%/g;

@@ -1,6 +1,6 @@
 (function($) {
   // スライダーオプションの初期設定
-  var defaultSettings = {
+  let defaultSettings = {
     // レイアウト
       // スライダー自体の幅
       'width': 0,
@@ -40,7 +40,7 @@
   };
 
   // Custom Event
-  var
+  let
     slide = {
       'setFinish': jQuery.Event('slide:setFinish'),
       'changeFinish': jQuery.Event('slide:changeFinish'),
@@ -54,9 +54,7 @@
   if (!Array.indexOf) {
       Array.prototype.indexOf = function(o) {
           for (var i in this) {
-              if (this[i] == o) {
-                  return i;
-              }
+              if (this[i] == o) return i;
           }
           return -1;
       };

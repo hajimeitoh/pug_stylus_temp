@@ -5,7 +5,7 @@ var gulp = require('gulp');
 
 //setting : babel Options
 var bableOptions = {
-  presets: ['es2015']
+  "presets": ["env"]
 };
 
 module.exports = (function () {

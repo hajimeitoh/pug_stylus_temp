@@ -1,8 +1,5 @@
 // gulpプラグインの読み込み
 var gulp = require('gulp');
-// OS判別、ローカルホスト設定
-var os = require('os');
-var host = os.type().toString().match('Windows') !== null  ? 'localhost':'0.0.0.0';
 
 // gulp関連以外のプラグイン読み込み
 var
@@ -20,11 +17,17 @@ global.$ = tasks.plugins;
 
 /**
  * server
+ * 環境によってhostは変更
+ * windows
  */
+var host = {
+  local: 'localhost',
+  ip: '0.0.0.0'
+};
 gulp.task('server', function() {
   gulp.src(__CONFIG.dist)
     .pipe($.webserver({
-      host: host,
+      host: host.ip,
       port: 8000,
       livereload: true,
       fallback: __CONFIG.path.dist + 'index.html',
@@ -54,7 +57,7 @@ gulp.task('watch', function () {
  * build
  */
 gulp.task('build', function (callback) {
-  return runSequence('clean', ['pug', 'style', 'copy'], callback);
+  return runSequence('clean', ['babel', 'pug', 'style', 'copy'], callback);
 });
 
 /**
@@ -68,7 +71,7 @@ gulp.task('minify', function (callback) {
  * dist
  */
 gulp.task('clean_dist',function (callback) {
-  del(__CONFIG.path.clean_dist, callback);
+  return del(__CONFIG.path.clean_dist, callback);
 });
 gulp.task('dist',function (callback) {
   global.__IS_PRODUCTION = true;
