@@ -2,12 +2,13 @@
  * スタイルタスク
  * stylをコンパイルしてAutoprefixerをかける。プロダクションリリース時には圧縮する
  */
-var gulp = require('gulp');
-var nib = require('nib');
+const
+  gulp = require('gulp'),
+  nib = require('nib');
 
-module.exports = (function () {
-  gulp.task('style', function() {
-    return gulp.src(__CONFIG.path.style.src)
+module.exports = ( () => {
+  gulp.task('style', () =>
+    gulp.src(__CONFIG.path.style.src)
       .pipe($.plumber({errorHandler: $.notify.onError('<%= error.message %>')}))
       .pipe($.stylus({
         use: nib()
@@ -16,6 +17,6 @@ module.exports = (function () {
         fallbacks: {autoprefixer: ['last 4 versions']},
         minifier: false
       }))
-      .pipe(gulp.dest(__CONFIG.path.style.dest));
-  });
+      .pipe(gulp.dest(__CONFIG.path.style.dest))
+  );
 })();

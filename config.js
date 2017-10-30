@@ -1,10 +1,11 @@
 /**
  * タスク設定ファイル
  */
-// 出力先ディレクトリ
-var dist = './dist/';
-// 入力元ディレクトリ
-var assets = './assets/';
+const
+  // 出力先ディレクトリ
+  dist = './dist/',
+  // 入力元ディレクトリ
+  assets = './assets/';
 
 module.exports = {
     // 出力先ディレクトリ
