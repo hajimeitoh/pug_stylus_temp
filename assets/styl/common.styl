@@ -1,25 +1,5 @@
-@import 'nib'
-global-reset()
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td
-  reset-box-model()
-  reset-font()
-body
-  reset-body()
-ol, ul
-  list-style: none
-table
-  reset-table()
-caption, th, td
-  reset-table-cell()
-a img
-  border: none
+@import '_reset'
+
 /* common */
 h1, h2, h3
   font-size inherit
@@ -29,6 +9,18 @@ html, body
   margin 0
   font-family 'Lato', 'Noto Sans JP', sans-serif
   background-color #333
+  min-height 100vh
+
+.container
+  width 100%
+  min-height 100vh
+  display flex
+  flex-direction column
+  flex-wrap no-wrap
+  justify-content space-between
+  align-items stretch
+  margin 0
+  padding 0
 
 .header
   background-color #888
@@ -41,13 +33,11 @@ html, body
     padding 10px
     font-weight 900
 
-.container
-  width 100%
-  display flex
-  flex-direction row
-  flex-wrap wrap
-  justify-content flex-start
-  align-items flex-start
-  margin 0
-  padding 0
+.footer
+  text-align right
+  background-color: #555
+  padding 10px
+  color #999
 
+.main
+  flex-grow 1

@@ -1,8 +1,9 @@
+//- レイアウト組用テンプレート
+
 doctype html
 
 include _dammy_images
 include _mixins
-include _site.config.pug
 
 block vars
 - var page = site.pages[pageid]
@@ -18,7 +19,8 @@ html(lang='ja')
     +csss(site.common_css.concat(page.css))
     +scripts(site.common_script.concat(page.script))
   body
-    include _header
-    main.main( id = pageid )
-      block contents
-    include _footer
+    .container
+      include _header
+      main.main( id = pageid )
+        block contents
+      include _footer

@@ -1,0 +1,34 @@
+{
+	"site": {
+		"name": "サンプルページ",
+		"url_base": "http://",
+		"author": "authoer name",
+		"common_css": [
+			"https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css",
+			"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css",
+			"https://fonts.googleapis.com/css?family=Lato:400,700,900",
+			"css/common.css"
+		],
+		"common_script": [
+			"https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js",
+			"https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js",
+			"http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"
+		],
+		"pages": {
+			"index": {
+				"title": "sample: index",
+				"description": "jQuery スライダープラグインのサンプルページです。",
+				"keywords": "",
+				"css": [
+					"https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css",
+					"css/multislider.css",
+					"css/index.css"
+				],
+				"script": [
+					"js/multislider.js",
+					"js/index.js"
+				]
+			}
+		}
+	}
+}

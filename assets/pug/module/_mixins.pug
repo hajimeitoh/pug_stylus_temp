@@ -1,8 +1,10 @@
+//- ベースmeta用
 mixin metabase
 	meta(name = 'description', content = page.description)
 	meta(name = 'keywords', content = page.keywords)
 	meta(name = 'author', content = site.name)
 
+//- meta-og用
 mixin metaog
 	meta(property = 'og:title', content = page.title)
 	meta(property = 'og:type', content = 'website')
@@ -11,10 +13,12 @@ mixin metaog
 	meta(property = 'og:site_name', content = site.name)
 	meta(property = 'og:description', content = page.description)
 
+//- scriptタグ一括出力
 mixin scripts(list)
 	each i in list
 		script(src = i)
 
+//- linkタグ一括出力
 mixin csss(list)
 	each i in list
 		link(rel = 'stylesheet', href = i)
