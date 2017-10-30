@@ -39,6 +39,7 @@ gulp.task('watch', () => {
   gulp.watch(__CONFIG.path.babel.watch, ['babel']);
   gulp.watch(__CONFIG.path.pug.watch, ['pug']);
   gulp.watch(__CONFIG.path.style.watch, ['style']);
+  gulp.watch(__CONFIG.path.sprite.watch, ['sprite', 'style', 'copy']);
 
   let copyWatches = [];
   // 複製タスクはループで回して監視対象とする
@@ -53,7 +54,7 @@ gulp.task('watch', () => {
  */
 gulp.task(
   'build',
-  callback => runSequence('clean', ['babel', 'pug', 'style', 'copy'], callback)
+  callback => runSequence('clean', 'sprite', ['babel', 'pug', 'style', 'copy'], callback)
 );
 
 /**

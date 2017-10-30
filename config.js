@@ -29,10 +29,23 @@ module.exports = {
         dist + '_data',
         dist + '_index.html'
       ],
+      html: {
+        dist: dist + '**/*.html',
+        dest: dist
+      },
       babel: {
         src: assets + 'js/**/*.es6',
         watch: assets + 'js/**/*.es6',
         dest: dist + 'js'
+      },
+      js: {
+        watch: assets + 'js/**/*.js',
+        dist: dist + 'js/**/*.js',
+        dest: dist + 'js'
+      },
+      json: {
+        dist: dist + '**/*.json',
+        dest: dist
       },
       pug: {
         src: [
@@ -45,7 +58,18 @@ module.exports = {
       style: {
         src: assets + 'styl/**/*.styl',
         watch: assets + 'styl/**/*.styl',
+        dist: dist + 'css/**/*.css',
         dest: dist + 'css'
+      },
+      sprite: {
+        src: assets + '_imgSprites/**/*',
+        watch: assets + '_imgSprites/**/*',
+        imageDest: assets + 'img/common',
+        cssDest: assets + 'styl/common/var/'
+      },
+      img: {
+        dist: dist + 'img/**/*',
+        dest: dist + 'img'
       },
       copy: [
         {
@@ -55,6 +79,10 @@ module.exports = {
         {
           from: assets + 'js/**/*.js',
           to: dist + 'js'
+        },
+        {
+          from: assets + 'img/**/*',
+          to: dist + 'img'
         }
       ]
     }

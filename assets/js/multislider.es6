@@ -182,7 +182,7 @@
     };
 
     proto.setEvents = function() {
-      var that = this;
+      let that = this;
 
       if( that.st.notSingleFlg ){
         that.multiple();
