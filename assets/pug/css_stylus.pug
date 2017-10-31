@@ -1,0 +1,27 @@
+extends module/_layout
+
+block vars
+  //- ページid
+  - var pageid = 'css_stylus'
+
+block contents
+  //- ページ本体
+  section.section
+    h2.subtitle
+      | cssのマークアップ
+    div.body
+      p
+        | このテンプレートではcssをstylusで記述します。
+        | stylusの記述は下記を参考にしてください。
+      ul.urllist.detail
+        each val in urllist
+          li
+            a( target="_blank", href = val.url ) !{val.title}
+  section.section
+    h2.subtitle
+      | this is subtite 02
+    div.body
+      p
+        | Dolor officia quaerat ad, a pariatur possimus doloremque vero at iure praesentium dignissimos, itaque aperiam earum repudiandae, harum amet! Culpa neque voluptatibus voluptatem quia optio adipisci beatae aliquam non aspernatur?
+      p
+        | Delectus accusamus deserunt sed error nesciunt quae, natus illum accusantium nobis vel consequuntur nisi assumenda officiis excepturi ut id adipisci rerum facilis. Rerum tenetur officia numquam iste totam enim ipsum!

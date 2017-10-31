@@ -16,17 +16,33 @@
 		],
 		"pages": {
 			"index": {
-				"title": "sample: index",
-				"description": "jQuery スライダープラグインのサンプルページです。",
+				"title": "pug & stylus template",
+				"description": "pugとstylusを使った静的テンプレートです。",
 				"keywords": "",
 				"css": [
-					"https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css",
-					"css/multislider.css",
 					"css/index.css"
 				],
 				"script": [
-					"js/multislider.js",
-					"js/index.js"
+				]
+			},
+			"html_pug": {
+				"title": "html & pug",
+				"description": "このテンプレート上でのhtml(pug)の生成とマークアップについて。",
+				"keywords": "",
+				"css": [
+					"css/html_pug.css"
+				],
+				"script": [
+				]
+			},
+			"css_stylus": {
+				"title": "css & stylus",
+				"description": "このテンプレート上でのcss(stylus)の生成とマークアップについて。",
+				"keywords": "",
+				"css": [
+					"css/css_stylus.css"
+				],
+				"script": [
 				]
 			}
 		}

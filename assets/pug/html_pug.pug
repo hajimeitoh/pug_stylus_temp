@@ -1,0 +1,38 @@
+extends module/_layout
+
+block vars
+  //- ページid
+  - var pageid = 'html_pug'
+
+block contents
+  //- ページ本体
+  section.section
+    h2.subtitle
+      | htmlのマークアップ
+    div.body
+      p.detail
+        | このテンプレートではhtmlをhtmlのメタ言語であるpug(was jade)で記述します。
+        | PUGの記述は下記を参考にしてください。
+      ul.urllist.detail
+        each val in urllist
+          li
+            a( target="_blank", href = val.url ) !{val.title}
+  section.section
+    h2.subtitle
+      | レイアウトの構成
+    div.body
+      p.detail
+        | このテンプレートではヘッダ、フッタ、ナビゲーションなどの各モジュールをレイアウト用テンプレートで取り込んでいます。
+        | 各ページのpugファイルに書かれるのはmainタグ内のコンテンツの身になります。
+        <br>
+        | 実装に応じてレイアウト構成を変更したり、モジュールを追加したりして使用してください。
+  section.section
+    h2.subtitle
+      | JSONの取り込み
+    div.body
+      p.detail
+        | ヘッダのmeta情報、linkタグ（css）、script等についてはdetaフォルダ内の「site.json」から自動で取り込みます。
+        | このときpug上部に指定したpageidを基に判断します。
+      p.detail
+        | その他にページごとの情報をJSONで取り込みたい場合、ページ名と同じ名前のjsonファイルをdataフォルダに設置してください。
+        | 同名のjsonファイルを見つけると自動で取り込みます。

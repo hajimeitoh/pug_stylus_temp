@@ -1,5 +1,5 @@
 {
-  "name": "gulp_template",
+  "name": "pug_stylus_temp",
   "version": "1.0.0",
   "description": "my gulp,pug,stylus template",
   "main": "index.js",

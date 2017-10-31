@@ -8,15 +8,13 @@ block contents
   //- ページ本体
   section.section
     h2.subtitle
-      | this is subtite 01
+      | モジュール一覧
     div.body
-      p
-        | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut rerum facere aut reprehenderit consequuntur ipsam culpa, incidunt quibusdam molestias provident, voluptate facilis aliquam, fugit ipsa dolores debitis voluptatem fugiat eveniet.
-  section.section
-    h2.subtitle
-      | this is subtite 02
-    div.body
-      p
-        | Dolor officia quaerat ad, a pariatur possimus doloremque vero at iure praesentium dignissimos, itaque aperiam earum repudiandae, harum amet! Culpa neque voluptatibus voluptatem quia optio adipisci beatae aliquam non aspernatur?
-      p
-        | Delectus accusamus deserunt sed error nesciunt quae, natus illum accusantium nobis vel consequuntur nisi assumenda officiis excepturi ut id adipisci rerum facilis. Rerum tenetur officia numquam iste totam enim ipsum!
+      table.detail.modulelist
+        each val, key in packages
+          tr
+            th.listtitle(colspan = "2") !{key}
+          each i in val
+            tr
+              th !{i[0]}
+              td !{i[1]}

@@ -48,18 +48,22 @@ module.exports = {
         dest: dist
       },
       pug: {
-        data: assets + 'data/site.json',
+        data: assets + 'data/',
         src: [
           assets + 'pug/**/*.pug',
           '!' + assets + 'pug/module/**/*.pug',
           '!' + assets + 'pug/**/_*.pug'
         ],
-        watch: assets + 'pug/**/*.pug',
+        watch: [
+          assets + 'pug/**/*.pug',
+          assets + 'data/',
+        ],
         dest: dist
       },
       style: {
         src: [
           assets + 'styl/**/*.styl',
+          '!' + assets + 'styl/module/**/*.styl',
           '!' + assets + 'styl/**/_*.styl'
         ],
         watch: assets + 'styl/**/*.styl',

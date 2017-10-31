@@ -12,11 +12,36 @@ const
     pretty: true
   };
 
+// jsonSet
+var setJson = filepath => {
+  return JSON.parse(fs.readFileSync( filepath, { encoding:"utf8" } ));
+};
+// file exist
+var isExistFile = filepath => {
+  try {
+    fs.statSync(filepath);
+    return true
+  } catch(err) {
+    if(err.code === 'ENOENT') return false
+  }
+}
+
 module.exports = ( () => {
   gulp.task('pug', () =>
     gulp.src(__CONFIG.path.pug.src)
       .pipe($.data( file => {
-        return JSON.parse(fs.readFileSync( __CONFIG.path.pug.data ));
+        return setJson( __CONFIG.path.pug.data + 'site.json' );
+      }))
+      .pipe($.data( file => {
+        let c, filename, filepath;
+        if (file.path.length !== 0) {
+          c = file.path.split('\\').join('/');
+          filename = c.split('pug/')[1].replace('.pug', '');
+          filepath = __CONFIG.path.pug.data + filename + '.json';
+          if ( isExistFile(filepath) ) {
+            return setJson(filepath);
+          }
+        }
       }))
       .pipe($.plumber({errorHandler: $.notify.onError('<%= error.message %>')}))
       .pipe($.pug(pugOptions))

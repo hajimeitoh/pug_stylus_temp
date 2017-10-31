@@ -1,14 +1,19 @@
-@import '_reset'
+@import 'nib'
+@import 'module/_reset'
+@import 'module/_base'
 
 /* common */
-h1, h2, h3
+h1, h2, h3, a
   font-size inherit
 
+a
+  color $linkcolor_light
 html, body
   padding 0
   margin 0
   font-family 'Lato', 'Noto Sans JP', sans-serif
-  background-color #333
+  background-color $mainbgcolor
+  font-size $textSize
   min-height 100vh
 
 .container
@@ -19,25 +24,74 @@ html, body
   flex-wrap no-wrap
   justify-content space-between
   align-items stretch
-  margin 0
+  margin 0 auto
   padding 0
+  color $maincolor
 
 .header
-  background-color #888
+  background-color $mainbgcolor_light
   margin 0
-  color #ccc
   font-size 2rem
   position relative
+  box-sizing border-box
   & > .head
     margin 0
     padding 10px
     font-weight 900
 
+.nav
+  width 100%
+  background-color $mainbgcolor_light2
+  padding 5px
+  box-sizing border-box
+  font-size 0
+  &-list
+    overflow hidden
+    &-item
+      display inline-block
+      font-size 1rem
+      a, span
+        display block
+        text-decoration none
+        line-height 1
+        padding 6px 12px
+        color $linkBoxcolor
+        background-color $linkBoxbgcolor
+      & + &
+        margin-left 5px
+    &-item.current
+      span
+        color $linkBoxcolor_current
+        background-color $linkBoxbgcolor_current
+
 .footer
   text-align right
-  background-color: #555
+  background-color: $mainbgcolor_light
   padding 10px
-  color #999
+  box-sizing border-box
 
 .main
+  max-width $maxWidth
+  margin 0 auto
   flex-grow 1
+  box-sizing border-box
+
+.section
+  margin 10px
+  background-color $mainbgcolor_light4
+  .subtitle
+    display block
+    width 100%
+    padding 6px
+    background-color $mainbgcolor_light3
+    color $maincolor_light3
+    font-size 1.5rem
+    box-sizing border-box
+  .body
+    color $maincolor_light4
+    padding: 10px;
+    p
+      font-size .8rem
+      line-height 1.4
+    & > .detail + .detail
+      padding-top 10px

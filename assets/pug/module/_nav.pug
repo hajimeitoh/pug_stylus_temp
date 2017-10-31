@@ -1,6 +1,10 @@
 //- ナビゲーションテンプレート
 nav.nav
   ul.nav-list
-    li.nav-list-item
-      a
-        |menu
+    each val, key in site.pages
+      - if( key === pageid )
+        li.nav-list-item.current
+          span !{val.title}
+      - else
+        li.nav-list-item
+          a(href = key + '.html') !{val.title}

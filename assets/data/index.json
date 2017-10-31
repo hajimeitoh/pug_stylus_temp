@@ -1,0 +1,32 @@
+{
+  "packages": {
+    "ファイル操作関連": [
+      ["del", "ファイル削除用ツール"],
+      ["gulp-copy", "ファイルコピー用ツール"],
+      ["gulp-data", "データ（json）取り込み用ツール"],
+      ["gulp-size", "ファイルサイズ計測"]
+    ],
+    "画像操作/css関連": [
+      ["gulp.spritesmith", "スプライト画像生成"],
+      ["gulp-imagemin", "画像圧縮"],
+      ["gulp-stylus", "stylus"],
+      ["gulp-pleeease", "CSSの各種操作"]
+    ],
+    "javascript関連": [
+      ["babel-cli<br>babel-core<br>babel-preset-env<br>gulp-babel", "ES6コンパイル関連"],
+      ["gulp-jsonminify", "json圧縮"],
+      ["gulp-uglify", "js圧縮"]
+    ],
+    "html関連": [
+      ["gulp-pug", "pug(was jade)"],
+      ["gulp-minify-html", "html圧縮"]
+    ],
+    "その他": [
+      ["gulp", "gulp本体"],
+      ["gulp-load-plugins", "gulp一括取り込み用ツール"],
+      ["gulp-notify", "通知用ツール"],
+      ["gulp-plumber", "エラーによるタスク停止予防"],
+      ["gulp-webserver", "ローカルサーバー＆ライブリロード"]
+    ]
+  }
+}
