@@ -13,10 +13,11 @@ block contents
       p.detail
         | このテンプレートではhtmlをhtmlのメタ言語であるpug(was jade)で記述します。
         | PUGの記述は下記を参考にしてください。
-      ul.urllist.detail
-        each val in urllist
-          li
-            a( target="_blank", href = val.url ) !{val.title}
+      .detail
+        ul.urllist
+          each val in urllist
+            li
+              a( target="_blank", href = val.url ) !{val.title}
   section.section
     h2.subtitle
       | レイアウトの構成
@@ -36,3 +37,25 @@ block contents
       p.detail
         | その他にページごとの情報をJSONで取り込みたい場合、ページ名と同じ名前のjsonファイルをdataフォルダに設置してください。
         | 同名のjsonファイルを見つけると自動で取り込みます。
+      div.detail
+        div.code-wrap
+          pre.code
+            code.html.hljs(data-head = "assets: html_pug.json")
+              :highlight(lang = 'json'):pug
+                include ../data/html_pug.json
+        div.code-wrap
+          pre.code
+            code.html.hljs(data-head = "assets: html_pug.pug")
+              :highlight(lang = 'pug')
+                ul.urllist
+                  each val in urllist
+                    li
+                      a( target="_blank", href = val.url ) !{val.title}
+        div.code-wrap
+          pre.code
+            code.html.hljs(data-head = "dist: html_pug.html")
+              :highlight(lang = 'html'):pug(pretty = true)
+                ul.urllist
+                  li: a( target="_blank", href="https://blog.mismithportfolio.com/web/20160326pugbegin" ) 【Pug】ゴリラでもわかるJade改めPug入門 – Snaplog
+                  li: a( target="_blank", href="https://pugjs.org/api/getting-started.html" ) pug（英語のオフィシャルサイト）
+                  li: a( target="_blank", href="https://qiita.com/garakuta/items/c83548c74e45838e3fe0" ) Pugと仲良くする方法

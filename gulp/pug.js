@@ -6,10 +6,12 @@ const
   transformer = require('jstransformer'),
   highlight = transformer(require('jstransformer-highlight')),
   stylus = transformer(require('jstransformer-stylus')),
+  pug = transformer(require('jstransformer-pug')),
   fs = require('fs'),
   //setting : Pug Options
   pugOptions = {
-    pretty: true
+    pretty: true,
+    basedir: 'pug'
   };
 
 // jsonSet

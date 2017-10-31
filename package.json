@@ -34,6 +34,7 @@
     "imagemin": "^5.3.1",
     "jstransformer": "^1.0.0",
     "jstransformer-highlight": "^1.0.1",
+    "jstransformer-pug": "^0.2.3",
     "jstransformer-stylus": "^1.4.0",
     "merge-stream": "^1.0.1",
     "nib": "^1.1.2",

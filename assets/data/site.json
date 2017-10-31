@@ -30,6 +30,7 @@
 				"description": "このテンプレート上でのhtml(pug)の生成とマークアップについて。",
 				"keywords": "",
 				"css": [
+					"https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css",
 					"css/html_pug.css"
 				],
 				"script": [
