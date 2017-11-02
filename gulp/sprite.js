@@ -10,12 +10,16 @@ const
 module.exports = ( () => {
   gulp.task('sprite', () => {
     let
-      spriteData = gulp.src(__CONFIG.path.sprite.src)
+      spriteData = gulp.src(__CONFIG.path.sprite.src + '*.png')
         .pipe($.spritesmith({
           imgName: 'sprite.png',
-          cssName: '_sprite.styl',
           imgPath: '../../img/common/sprite.png',
-          cssFormat: 'stylus',
+          retinaSrcFilter: __CONFIG.path.sprite.src + '*@2x.png',
+          retinaImgName: 'sprite-2x.png',
+          retinaImgPath: '../../img/common/sprite-2x.png',
+          padding: 10,
+          cssName: '_sprite.styl',
+          cssFormat: 'stylus_retina',
           cssVarMap: sprite => {
             sprite.name = 'sprite-' + sprite.name;
           }

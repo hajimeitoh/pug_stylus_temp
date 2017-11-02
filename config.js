@@ -71,10 +71,10 @@ module.exports = {
         dest: dist + 'css'
       },
       sprite: {
-        src: assets + '_imgSprites/**/*',
-        watch: assets + '_imgSprites/**/*',
+        src: assets + '_imgSprites/',
+        watch: assets + '_imgSprites/',
         imageDest: assets + 'img/common',
-        cssDest: assets + 'styl/common/var/'
+        cssDest: assets + 'styl/module'
       },
       img: {
         dist: dist + 'img/**/*',

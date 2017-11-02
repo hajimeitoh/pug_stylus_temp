@@ -23,3 +23,53 @@ block contents
         each val in urllist2
           li
             a( target="_blank", href = val.url ) !{val.title}
+  section.section
+    h2.subtitle
+      | スプライト画像の生成と利用
+    div.body
+      p.detail
+        | スプライト画像の元となる各画像は、
+        code.dir
+          span.block assets
+          span.block _imgSprites
+        | に保存する。
+        br
+        | retina対応で画像を分ける場合、
+        code.dir: span.block circle-down.png
+        | 、
+        code.dir: span.block circle-down@2x.png
+        | といったように末尾に「@2x」をつけて保存する。
+      p.detail
+        | gulpを叩くと結合された画像が
+        code.dir
+          span.block assets
+          span.block img
+          span.block common
+        | に「sprite.png」、「sprite−2x.png」の名前で保存され、これを利用するためのstylusファイルが
+        code.dir
+          span.block assets
+          span.block styl
+          span.block module
+        | に入るので、各stylusファイルにこのファイルをインクルードして利用する。
+      div.detail
+        div.code-wrap
+          pre.code
+            code.html.hljs(data-head = "stylus")
+              :highlight(lang = 'stylus')
+                @import 'module/_sprite.styl'
+                .icon-down
+                  retinaSprite($sprite_circle_down_group)
+        div.code-wrap
+          pre.code
+            code.html.hljs(data-head = "css")
+              :highlight(lang = 'css'):stylus
+                @import '../styl/module/_sprite.styl'
+                .icon-down
+                  retinaSprite($sprite_circle_down_group)
+      div.detail
+        div.sample
+          div
+            i.icon-down
+            i.icon-left
+            i.icon-up
+            i.icon-right

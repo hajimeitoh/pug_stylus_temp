@@ -1,5 +1,21 @@
+@import 'module/_code'
+@import 'module/_sprite.styl'
+
 .urllist
   & > li
     padding 4px
     a
       font-size .8rem
+
+.icon-down
+  display inline-block
+  retinaSprite($sprite_circle_down_group)
+.icon-left
+  display inline-block
+  retinaSprite($sprite_circle_left_group)
+.icon-right
+  display inline-block
+  retinaSprite($sprite_circle_right_group)
+.icon-up
+  display inline-block
+  retinaSprite($sprite_circle_up_group)
