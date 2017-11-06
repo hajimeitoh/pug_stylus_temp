@@ -35,7 +35,6 @@
     "gulp-uglify": "^3.0.0",
     "gulp-webserver": "^0.9.1",
     "gulp.spritesmith": "^6.5.1",
-    "imagemin": "^5.3.1",
     "jstransformer": "^1.0.0",
     "jstransformer-highlight": "^1.0.1",
     "jstransformer-pug": "^0.2.3",
@@ -43,7 +42,6 @@
     "merge-stream": "^1.0.1",
     "nib": "^1.1.2",
     "run-sequence": "^2.2.0",
-    "uglify-save-license": "^0.4.1",
-    "vinyl-buffer": "^1.0.0"
+    "uglify-save-license": "^0.4.1"
   }
 }

@@ -4,8 +4,7 @@
  */
 const
   gulp = require('gulp'),
-  ms = require('merge-stream'),
-  buffer = require('vinyl-buffer');
+  ms = require('merge-stream');
 
 module.exports = ( () => {
   gulp.task('sprite', () => {
@@ -28,10 +27,8 @@ module.exports = ( () => {
     if( spriteData.img ){
       let
         imgStream = spriteData.img
-          .pipe(buffer())
           .pipe(gulp.dest(__CONFIG.path.sprite.imageDest)),
         cssStream = spriteData.css
-          .pipe(buffer())
           .pipe(gulp.dest(__CONFIG.path.sprite.cssDest));
       return ms(imgStream, cssStream);
     }

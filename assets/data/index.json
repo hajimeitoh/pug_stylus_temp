@@ -15,7 +15,8 @@
     "javascript関連": [
       ["babel-cli<br>babel-core<br>babel-preset-env<br>gulp-babel", "ES6コンパイル関連"],
       ["gulp-jsonminify", "json圧縮"],
-      ["gulp-uglify", "js圧縮"]
+      ["gulp-uglify", "js圧縮"],
+      ["uglify-save-license", "できるだけライセンスコメントを残して圧縮する"]
     ],
     "html関連": [
       ["gulp-pug", "pug(was jade)"],
@@ -26,7 +27,8 @@
       ["gulp-load-plugins", "gulp一括取り込み用ツール"],
       ["gulp-notify", "通知用ツール"],
       ["gulp-plumber", "エラーによるタスク停止予防"],
-      ["gulp-webserver", "ローカルサーバー＆ライブリロード"]
+      ["gulp-webserver", "ローカルサーバー＆ライブリロード"],
+      ["merge-stream", "ストリームを一つにまとめる"]
     ]
   }
 }
